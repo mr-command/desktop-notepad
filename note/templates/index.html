@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>file info</title>
+    <link rel="stylesheet" href="{% static 'style/newfile.css' %}">
+</head>
+<body class="grid_container" style="width: 100%;">
+
+    <header class="grid_items header">
+        <h1>Note Pade</h1>
+        <h2>NotePad is For You !</h2>
+        <h4 id="h4"> title : {{note.title}} </h4>
+    </header>
+
+    <nav>
+        <a href="{% url 'newfile' %}">New file</a>
+        <a href="{% url 'myfile' %}">My files</a>
+    </nav>
+    <main class="grid_items" style="width: 100%;display: flex;justify-content: center;">
+        
+        <form action="{% url 'myfile' %}" method="post">
+            {% csrf_token %}
+            <textarea name="txt" id="txt" style="width: 1000px;height: 700px;margin-top: 100px;">
+                {{ note.content }}
+            </textarea>
+            <br>
+            
+        </form>
+
+            </main>
+</body>
+</html>

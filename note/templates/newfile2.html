@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>new file</title>
+{% block content %}
+        <link rel="stylesheet" href="{% static 'style/newfile2.css' %}">
+</head>
+<body>
+
+    <nav style="height: 50px;">
+        <a href="{% url 'myfile' %}" style="font-family:'tahoma';">My files</a>
+    </nav>
+
+    <main class="items" style="display: flex;justify-content: center;">
+    <form action="{% url 'newfile2' %}" method="post" style="width: 100%;">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="submit" style="margin-left: 41%;margin-bottom: 40px;width: 360px;height: 40px;background-color: white;border: 1px solid blue;color: blue;">
+    </form>
+    </main>
+    
+
+    <!-- <script src="script.js"></script> -->
+</body>
+</html>
+{% endblock %}

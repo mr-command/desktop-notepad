@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>myfiles</title>
+    {% block content %}
+    <link rel="stylesheet" href="{% static 'style/myfile.css' %}">
+</head>
+<body class="grid_container">
+
+    <nav style="height: 50px;">
+        <a href="{% url 'newfile' %}">New file</a>
+    </nav>
+    <main class="grid_items" style="height: 800px;">
+        {% for item in notes %}
+        
+            <h4>FILE NAME -- : --  {{ item.title }}</h4>
+            <h4><a href="{% url 'note' item.id %}">view</a></h4>
+
+        {% endfor %}
+    </main>
+
+
+    <!-- <script src="script.js"></script> -->
+</body>
+</html>
+{% endblock %}
