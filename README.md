@@ -9,6 +9,14 @@ A simple notepad application built with Django that lets you write notes and sav
 - Simple and lightweight interface
 - Built with Django and Python
 
+## Screenshot
+
+<p align="center">
+  <img src="screenshots/image.png" alt="Desktop Notepad Screenshot" width="800">
+</p>
+
+
+
 ## Getting Started
 
 ### Clone the repository
